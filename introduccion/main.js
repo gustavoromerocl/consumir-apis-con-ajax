@@ -27,7 +27,7 @@ fetch('https://jsonplaceholder.typicode.com/todos/1')
   .then(
     (response) => {
       console.log(response.status)
-      response.json()
+      return response.json()
     }
   ).then(
     (data) => console.log(data)

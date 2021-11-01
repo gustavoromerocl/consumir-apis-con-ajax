@@ -6,6 +6,8 @@ http => modulo de nodejs para consultas cliente servidor
 .json() => traduce la respuesta al formato json
 .text() => traduce la respuesta a formato de texto
 
+Object.keys(objeto) => retorna los hashes de un objeto en un nuevo arreglo
+
 #status code 
 200 < peticion correcta 
 300 < redireccionamiento
