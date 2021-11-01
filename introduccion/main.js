@@ -1,5 +1,6 @@
 /**https://jsonplaceholder.typicode.com/ */
 
+/*
 const result = fetch('https://jsonplaceholder.typicode.com/todos/1');
 
 //console.log(result);
@@ -19,10 +20,17 @@ fetch('https://jsonplaceholder.typicode.com/todos/1')
   ).then(
     function(data){ console.log(data); }
   )
+*/
+
 
 fetch('https://jsonplaceholder.typicode.com/todos/1')
   .then(
-    (response) => response.json()
+    (response) => {
+      console.log(response.status)
+      response.json()
+    }
   ).then(
     (data) => console.log(data)
+  ).catch(
+    err => console.log(err)
   )
