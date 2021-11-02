@@ -2,6 +2,9 @@
 /**https://fetch.spec.whatwg.org/#fetch-api */
 /**https://developer.mozilla.org/es/docs/Web/API/URLSearchParams */
 
+
+/**PARAMETROS QUERY */
+
 /*
 let user = 1;
 
@@ -14,6 +17,10 @@ fetch(`https://jsonplaceholder.typicode.com/posts?userId=${user}`)
     err => console.log(err)
   )
 */
+
+/**MÉTODOS HTTP GET HEAD POST PUT DELETE CONNECT OPTIONS TRACE PATCH*/
+
+/** GET  */
 let url = new URL('https://jsonplaceholder.typicode.com/posts?userId');
 
 let parametros = {
@@ -32,7 +39,21 @@ Object.keys(parametros).forEach(paramKey => {
 
 //console.log(url);
 
-fetch(url).then(r => r.json()).then(data => console.log(data));
+//fetch(url).then(r => r.json()).then(data => console.log(data));
+
+
+
+/* POST */
+let postParams = {
+  title: 'test title',
+  body: 'test body',
+  userId: 1
+}
+
+fetch('https://jsonplaceholder.typicode.com/posts', {
+  method: 'POST',
+  body: JSON.stringify( postParams )
+}).then(r => r.json()).then(data => console.log(data));
 
 
 
