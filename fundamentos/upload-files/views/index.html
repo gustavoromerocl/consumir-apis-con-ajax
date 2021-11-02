@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Sube un archivo</h1>
+  <form action="http://localhost:8080/files" method="post" enctype="multipart/form-data">
+    <input type="file" name="avatar" id="">
+    <input type="submit" value="Enviar">
+  </form>
+
+  <script>
+    document.querySelector('#form').addEventListener('submit', (ev) => {
+      ev.preventDefault();
+
+      let formData = new FormData();
+
+      let file = document.querySelector('#avatar').files[0];
+
+      formData.append("avatar", file);
+
+      fetch('http://localhost:8080/files',{
+        method: 'POST',
+        body: formData
+      }).then(
+        r => r.text()
+      ).then(data => alert(data)
+      ).catch(
+        err => console.log(err)
+      )
+      return false;
+    })
+  </script>
+</body>
+</html>
