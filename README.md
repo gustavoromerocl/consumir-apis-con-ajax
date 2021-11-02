@@ -14,4 +14,9 @@ Object.keys(objeto) => retorna los hashes de un objeto en un nuevo arreglo
 400 < recurso no encontrado
 500 error
 
+#parametros de fecth
+method => especifica el metodo http a utilizar, por defecto es get
+body => para hacer modificaciones es necesarioe ncriptar la información que se intercambia con el servidor, por lo tanto se deben pasar en el body de la petición
+headers => especifica el tipo de formato en el que se esta enviando la patición
+
 Es posible revisar en detalle a través de la consola del navegador en la pestaña network

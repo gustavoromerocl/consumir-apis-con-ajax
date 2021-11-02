@@ -52,7 +52,11 @@ let postParams = {
 
 fetch('https://jsonplaceholder.typicode.com/posts', {
   method: 'POST',
-  body: JSON.stringify( postParams )
+  body: JSON.stringify( postParams ),
+  headers:  {
+    'Content-Type' : 'application/json; charset=UTF-8'
+  }
+
 }).then(r => r.json()).then(data => console.log(data));
 
 
