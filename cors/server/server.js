@@ -1,5 +1,4 @@
 /**https://developer.mozilla.org/es/docs/Web/HTTP/CORS */
-
 const express = require('express');
 const morgan = require('morgan');
 const app = express();
@@ -16,6 +15,9 @@ let f = (req, res) => {
 }
 
 app.options("/",(req,res)=>{
+  res.header("Access-Control-Allow-Origin","*");
+  res.header("Access-Control-Allow-Methods","PUT"); //Se habilita el metodo PUT para habilitar la peticion preflight
+  res.status(204).send()
 })
 
 app.get("/", f);
