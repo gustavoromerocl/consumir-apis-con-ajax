@@ -1,2 +1,6 @@
 //Control del DOM
-import { ToDo } from '/lib/ToDo.js'
+import { ToDo } from './ToDo.js'
+
+window.addEventListener('load', (ev) => {
+  ToDo.all().then(todos => console.log(todos));
+})

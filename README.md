@@ -25,3 +25,6 @@ Es posible revisar en detalle a travÃ©s de la consola del navegador en la pestaÃ
 npm install -g node-static
 static -p 3030
 static -H '{"Cache-Control": "no-cache, must-revalidate"}' -p 3030  (es opcional espeficiar el puerto)
+
+#events
+load => Se ejecuta cuando la pagina termina de cargar
