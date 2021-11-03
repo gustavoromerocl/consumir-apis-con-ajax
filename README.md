@@ -24,4 +24,4 @@ Es posible revisar en detalle a trav√©s de la consola del navegador en la pesta√
 #Server local con node
 npm install -g node-static
 static -p 3030
-static -p 3030 -H '{"Cache-Control": "no-cache, must-revalidate"}'
+static -H '{"Cache-Control": "no-cache, must-revalidate"}' -p 3030  (es opcional espeficiar el puerto)
