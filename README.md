@@ -20,3 +20,8 @@ body => para hacer modificaciones es necesarioe ncriptar la información que se 
 headers => especifica el tipo de formato en el que se esta enviando la patición
 
 Es posible revisar en detalle a través de la consola del navegador en la pestaña network
+
+#Server local con node
+npm install -g node-static
+static -p 3030
+static -p 3030 -H '{"Cache-Control": "no-cache, must-revalidate"}'
