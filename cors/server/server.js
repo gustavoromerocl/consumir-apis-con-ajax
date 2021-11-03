@@ -17,6 +17,7 @@ let f = (req, res) => {
 app.options("/",(req,res)=>{
   res.header("Access-Control-Allow-Origin","*");
   res.header("Access-Control-Allow-Methods","PUT"); //Se habilita el metodo PUT para habilitar la peticion preflight
+  res.header("Access-Control-Allow-Headers", "Content-Type, Authentication"); //Se habilitan los encabezados content type y authentication para la paeticion preflight
   res.status(204).send()
 })
 
