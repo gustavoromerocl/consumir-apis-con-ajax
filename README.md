@@ -28,3 +28,5 @@ static -H '{"Cache-Control": "no-cache, must-revalidate"}' -p 3030  (es opcional
 
 #events
 load => Se ejecuta cuando la pagina termina de cargar
+
+#prepend => A diferencia de append, este inserta el nodo anteponiendose al primer elemento de la lista
