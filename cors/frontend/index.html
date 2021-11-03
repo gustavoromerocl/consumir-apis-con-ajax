@@ -7,10 +7,12 @@
 </head>
 <body>
   <script>
+    document.cookie = "username=Gustavo";
     fetch("http://localhost:8080/", {
-      method: 'PUT',
-      headers: {"Content-Type": "application/json", "Authentication": "Bearer 123lksh"}
-      }
+        method: "PUT",
+        headers: {"Content-Type": "application/json", "Authentication": "@key_test"},
+        credentials: "include" //same origin es el valor por default, include se usa cuando el origen es distinto
+        }
       ).then(r => r.json()).then(data => console.log(data))
       .catch(err => console.log(err));
   </script>
