@@ -5,6 +5,7 @@
  */
 
 const path = "todos"
+const limit = 20;
 const endpoint = "https://jsonplaceholder.typicode.com"
 
 export default (action) => {
@@ -41,6 +42,6 @@ let getPath = (action) => {
     case "list":
       return `/${path}/${action.payload.id}`
     case "listAll":
-      return `/${path}`  
+      return `/${path}?_limit=${limit}`  
   }
 }

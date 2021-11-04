@@ -2,7 +2,7 @@
 import performer from './request.js';
 
 export class ToDo{
-  
+
   constructor(args){
     this.userId = args.userId;
     this.title = args.title;
@@ -16,5 +16,26 @@ export class ToDo{
     });
     //onsole.log(todos);
     return todos.map( todoJSON => new ToDo(todoJSON))
+  }
+
+  save = async () => {
+    if(this.id) return this.update();
+
+    this.create();
+  }
+
+  create = async () => {
+
+  }
+
+  update = async () => {
+    let response = await performer({
+      type: "update",
+      payload: {
+        id: this.id,
+        title: this.title
+      }
+    });
+    return response;
   }
 }

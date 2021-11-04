@@ -14,6 +14,8 @@ window.addEventListener('load', (ev) => {
 
       //Insertamos el nodo en el contenedor
       container.prepend(node);
+
+      editInPlace(node.querySelector('h1'), todo);
     })
   });
 
@@ -22,7 +24,29 @@ window.addEventListener('load', (ev) => {
     li.innerHTML = `
       <h1>${todo.title}</h1>
     `
-    console.log(li);
+    //console.log(li);
+    
     return li;
+  }
+
+  let editInPlace = (node, todo) => {
+    node.addEventListener('click', (ev) => {
+      //Reemplazar el nodo por un campo de texto, al finalizar la edición debemos reemplazar el campo de texo por un nuevo nodo
+      let inputText = document.createElement('textarea');
+      inputText.value = node.innerHTML;
+      inputText.autofocus = true;
+
+      node.replaceWith(inputText);
+
+      inputText.addEventListener('change', (ev) => {
+        inputText.replaceWith(node);
+        todo.title = ev.target.value;
+
+        node.innerHTML = todo.title;
+        
+        todo.save().then(r => console.log(r));
+      })
+    })
+
   }
 })
